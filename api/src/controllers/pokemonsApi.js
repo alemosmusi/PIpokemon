@@ -1,20 +1,7 @@
 const axios = require("axios");
 
 const pokemonApi = async () => {
-//     try{ 
-//     const personajes = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40')
-//     // const person = await personajes.data.results.map(el => {
-//     //     return{
-//     //         id: el.id,
-//     //         name: el.name,
-//     //         origen: el.origin.name,
-//     //         image: el.image,
-//     //         episode: el.episode
-//     //     }
-//     // })
-
-//     return personajes.data.results
-//   }catch(error){error.console.log(error)}
+    
 
 try{
     // let PokemonsApi = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40');
