@@ -1,0 +1,61 @@
+
+
+  
+  #sidebar {
+    position: relative;
+    min-width: 200px;
+    min-height: 650px;
+    width: 20%;
+    height: 100%;
+    background: #00010acc;
+    display: inline-block
+  }
+  
+  
+  #sidebar ul li {
+    color: rgba(230, 230, 230, .9);
+    list-style: none;
+    padding: 15px 10px;
+    text-align: center;
+  }
+
+
+  #sidebar ul input {
+    list-style: none;
+    padding: 7px 10px;
+    text-align: center;
+  }
+  
+  .lcheck{
+    list-style: none;
+    display: inline-block;
+  
+  }
+
+  .ccheck{
+    list-style: none;
+    display: inline-block;
+  }
+
+
+  .btns{
+  
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+    width: 45%;
+    border-radius: 5px;
+    
+      }
+
+  .btns:hover{
+    background-color: rgb(148, 160, 188);
+    border-top: 3px solid rgb(14, 31, 39);;
+    border-left: 3px solid rgb(14, 31, 39);;
+    border-bottom: 3px solid rgb(39, 85, 108);
+    border-right: 3px solid rgb(39, 85, 108);
+  }
+
+.gameover{
+  width: 100%
+}

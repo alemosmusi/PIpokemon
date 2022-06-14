@@ -8,7 +8,7 @@ const pokemonDb = async () => {
             {include: {
                 model: Tipo
                }})
-        console.log(createPoke[0].tipos[0].name);
+    
         if(createPoke.length>0){
             for (let index = 0; index < createPoke.length; index++) {
                 var tip = []
@@ -21,12 +21,12 @@ const pokemonDb = async () => {
                 var npoke = {
                     id: createPoke[index].id,
                     name: createPoke[index].name,
-                    vida: createPoke[index].vida,
-                    fuerza: createPoke[index].fuerza,
-                    defensa: createPoke[index].defensa,
-                    velocidad: createPoke[index].velocidad,
-                    altura: createPoke[index].altura,
-                    peso: createPoke[index].peso,
+                    vida: parseInt(createPoke[index].vida),
+                    fuerza: parseInt(createPoke[index].fuerza),
+                    defensa: parseInt(createPoke[index].defensa),
+                    velocidad: parseInt(createPoke[index].velocidad),
+                    altura: parseInt(createPoke[index].altura),
+                    peso: parseInt(createPoke[index].peso),
                     img: createPoke[index].img,
                     type: tip
 

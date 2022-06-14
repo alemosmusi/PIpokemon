@@ -1,0 +1,133 @@
+.home{
+    min-height: 650px;
+    /* background-image: url("../../assets/img/banner.png"); */
+}
+.contenedor{
+    position: absolute;
+    display: inline-block;
+    
+    /* height: 100%; */
+}
+.fondo{
+    position: absolute;
+    width: 100%;
+    min-height: 650px;
+    z-index: -1;
+}
+
+
+
+.btnsp{
+  
+    /* list-style: none;
+    display: inline-block;
+    margin: 5px;
+    font-size: 50px;
+    width: 70px;
+    border-radius: 100%; */
+
+   
+
+
+    background-color: black;
+  font-size: 30pt;
+  font-family: 'Press Start 2p';
+
+    text-shadow: 1px 1px pink, -1px -1px maroon;
+
+	line-height: 1.5em;
+	text-align: center;
+	display: inline-block;
+	width: 1.5em;
+	-webkit-border-radius: .75em;
+	-moz-border-radius: .75em;
+	-o-border-radius: .75em;
+		border-radius: .75em;
+	background-color: red;
+	-webkit-box-shadow:  0 .2em maroon;
+	-moz-box-shadow:  0 .2em maroon;
+	-o-box-shadow:  0 .2em maroon;
+	box-shadow:  0 .2em maroon;
+	color: rgb(131, 128, 128);
+	margin: 5px;
+	background-color: red;
+	background-image: -o-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-image: -moz-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-image: -webkit-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-image: linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	cursor: pointer;
+  padding-left: 5px;
+  border-color: rgba(240, 248, 255, 0.479);
+
+
+
+    
+      }
+
+  .btnsp:hover{
+    /* background-color: rgb(148, 160, 188);
+    border-top: 3px solid rgb(14, 31, 39);;
+    border-left: 3px solid rgb(14, 31, 39);;
+    border-bottom: 3px solid rgb(39, 85, 108);
+    border-right: 3px solid rgb(39, 85, 108); */
+
+
+    box-shadow: none;
+	position: relative;
+	top: .2em;
+
+
+
+
+  }
+  .filtrot{
+      min-width: 100px;
+      height: 100px;
+      background-color: red;
+  }
+  .botontype{
+      font-size: 15px;
+    height: 40px;
+    min-width: 100px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: rgba(255, 0, 0, 0.772);
+    cursor:pointer;
+      
+  }
+  .filtrotype{
+    width:40px;
+    height:40px;
+    font-family: Arial, Black, sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-display: center;
+    top: 100%;
+    left: 10%;
+    transform: translate(5%, 40%);
+    text-shadow: 2px 2px rgb(14, 15, 36);
+    z-index: 1;
+  }
+
+  h3{
+      color: aliceblue;
+  }
+
+  .buscarpoke{
+      color: aliceblue;
+      background-color: red;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+  }
+
+  .buscarlink{
+    color: aliceblue;
+    font-size: 30px;
+    background-color: red;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}

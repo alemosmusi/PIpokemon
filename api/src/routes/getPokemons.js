@@ -60,9 +60,15 @@ router.get('/', async (req, res)=>{
         
     }else{
         
+        // let pokemones =  []
         let pokemones =  await pokemonDb();
-        pokemones = pokemones.concat( await pokemonApi());
-        res.json(pokemones);   
+        if(pokemones === "error"){
+            res.json(await pokemonApi());
+        }else{
+            pokemones = pokemones.concat( await pokemonApi());
+            res.json(pokemones);  
+        }
+         
     }
   
 })
