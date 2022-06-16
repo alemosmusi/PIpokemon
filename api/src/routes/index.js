@@ -4,6 +4,7 @@ const { Router } = require('express');
 const getPokemons = require('./getPokemons');
 const getPokemonsdb = require('./getPokemonsdb');
 const getTipos = require('./getTipos');
+const deletePokemon = require('./deletePokemon');
 
 
 const router = Router();
@@ -14,6 +15,9 @@ const router = Router();
 router.use('/pokemons', getPokemons);
 router.use('/pokemonsdb', getPokemonsdb);
 router.use('/types', getTipos);
+
+
+router.use('/deletePoke', deletePokemon)
 
 
 

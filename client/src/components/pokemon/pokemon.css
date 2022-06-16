@@ -68,3 +68,16 @@
     text-shadow: 2px 2px rgb(14, 15, 36);
     z-index: 1;
 }
+
+.x{
+    width: 30px;
+    max-width: 30px;
+    height: 30px;
+    border-radius: 90px;
+    background: linear-gradient(90deg, rgb(255, 0, 0), rgb(253, 252, 252));
+    overflow: hidden;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 10px;
+    z-index: 1;
+}

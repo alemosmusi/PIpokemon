@@ -105,13 +105,13 @@ const pokemonReducer = (state = initialState, action) => {
             }
             
         
-        // case ELIMINAR_UN_GAME:
+        case ELIMINAR_UN_POKEMON:
             
-        //     return {
-        //         ...state,
-        //         eli: ab++
+            return {
+                ...state,
+                eli: ab++
             
-        //     }
+            }
             
     
         default:

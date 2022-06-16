@@ -105,19 +105,19 @@ export function obtenerDetallen(name){
 }
 
 
-// export function eliminarGame(id){
-//     return function(dispatch){
+export function eliminarPoke(id){
+    return function(dispatch){
         
-//         return axios.delete(`/deletegame?id=${id}`)
-//         .then((response) => {
-//             dispatch({
-//                 type: ELIMINAR_UN_GAME,
-//                 payload: response.data
-//             })
-//         })
-//     }
+        return axios.delete(`http://localhost:3001/deletePoke?id=${id}`)
+        .then((response) => {
+            dispatch({
+                type: ELIMINAR_UN_POKEMON,
+                payload: response.data
+            })
+        })
+    }
 
-// }
+}
 
 
 

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import '../sideBar/sideBar.css';
 import '../home/home.css';
@@ -19,8 +18,8 @@ export default function Pokemoncreados(){
     const [FUERZA, setFUERZA] = useState("FUERZA-↧")
     const allTypes = useSelector((state) => state.arrayTypes)
     const [typesSelect, settypesSelect] = useState([])
-    const [checkb, setCheckb] = useState(["apip","misp"])
-    const [buscar, setBuscar] = useState("")
+
+    const eli = useSelector((state) => state.eli)
 
 
 
@@ -28,7 +27,7 @@ export default function Pokemoncreados(){
         dispatch(obtenerTypes())
         dispatch(obtenerPokemons())
         dispatch(obtenerPokemonsCreated())
-    }, [])
+    }, [eli])
     useEffect(() => {
         filterpokemon()
     }, [allPokemons,allTypes])
@@ -39,11 +38,6 @@ export default function Pokemoncreados(){
         var filtered = allPokemons
         
 
-        // if (search.length > 0){
-        //  filtered = filtered.filter(poke => poke.name.toLowerCase().includes(search))}
-        //  if(envG.length > 0){ filtered = filtrarG(filtered,envG)}
-        if(checkb.length === 0 ){return filtered = []}
-        if(checkb.length > 0){filtered = filtroChec(filtered,checkb)}
         if(typesSelect.length > 0){ filtered = filtrarG(filtered,typesSelect)}
         
         return filtered.slice(pagina, pagina + 12)
@@ -100,32 +94,17 @@ export default function Pokemoncreados(){
     
 
 
-    const checkbox = function(e){
-        if(checkb.includes(e.target.value)){
-            setCheckb(
-                checkb.filter((a) => e.target.value !== a)
-            )
-            
-        }else{
-            setCheckb(
-                [...checkb, e.target.value]
-            )
-        }
-        
-    }
-
-    const busqueda = function(e){
-        setBuscar(e.target.value)
-        
-    }
 
 
 
 
 
 
-
-
+if(allPokemons === "vacia"){
+    return(
+        <img className="sinfiltro" src="https://pa1.narvii.com/6461/2269b70c4c3a54f54b1b0d983840cb988c0068e8_hq.gif" alt=""></img>
+    )
+}
 
 
    
@@ -151,10 +130,10 @@ export default function Pokemoncreados(){
             <div className="contenedor">
                 <div>
                     {
-                    allPokemons && allPokemons.length>1 ? <Pokemons pokes={filterpokemon()}></Pokemons>:""
+                    allPokemons && allPokemons.length>0 ? <Pokemons pokes={filterpokemon()}></Pokemons>:""
                     }
                 </div>
-                {allPokemons && allPokemons.length>1 && filterpokemon().length === 0? <img className="sinfiltro" src="https://giffiles.alphacoders.com/140/14071.gif" alt=""></img>:""}
+                {allPokemons && allPokemons.length>0 && filterpokemon().length === 0? <img className="sinfiltro" src="https://giffiles.alphacoders.com/140/14071.gif" alt=""></img>:""}
                 <div>
                     {pagina >= 12 ? <button onClick={prevPage} className="btnsp">&lt;</button> : ""}
                     {11 < filterpokemon().length ? <button onClick={nextPage} className="btnsp">&gt;</button> : ""}

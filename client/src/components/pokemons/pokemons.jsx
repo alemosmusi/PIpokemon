@@ -4,8 +4,7 @@ import './pokemons.css';
 
 
 export default function Pokemons(a) {
-
-    
+  
   return (
     <div className='cards' >
       {a.pokes.map(c => <Pokemon

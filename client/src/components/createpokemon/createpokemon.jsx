@@ -81,8 +81,8 @@ export  function  CreatePokemon() {
     if (isNaN(envi.velocidad) || envi.velocidad.includes(".") || envi.velocidad < 1 || envi.velocidad > 100) {errors.velocidad = 'la velocidad tiene que ser entre 1 y 100'}
     if (isNaN(envi.altura) || envi.altura.includes(".") || envi.altura < 1 ) {errors.altura = 'la altura tiene que ser un numero entero'}
     if (isNaN(envi.peso) || envi.peso.includes(".") || envi.peso < 1 ) {errors.peso = 'la peso tiene que ser un numero entero'}
-    if (!envi.img.includes(".jpg") || !envi.img.includes("http") || !envi.img.includes(".com")) {
-      errors.img = 'es necesario una foto de una web ej: https://tinypng.com/images/social/website.jpg';
+    if (!envi.img.includes(".png") || !envi.img.includes("http") || !envi.img.includes(".com")) {
+      errors.img = 'es necesario una foto de una web ej: https://cdn-icons-png.flaticon.com/512/634/634741.png';
     }
     if (envi.types.length < 1) {errors.types = 'es necesario tipos'}
 
