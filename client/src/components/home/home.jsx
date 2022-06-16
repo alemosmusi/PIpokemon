@@ -167,11 +167,13 @@ export function Home(){
                     allPokemons && allPokemons.length>1 ? <Pokemons pokes={filterpokemon()}></Pokemons>:<Loading></Loading>
                     }
                 </div>
+                {allPokemons && allPokemons.length>1 && filterpokemon().length === 0? <img className="sinfiltro" src="https://giffiles.alphacoders.com/140/14071.gif" alt=""></img>:""}
                 <div>
                     {pagina >= 12 ? <button onClick={prevPage} className="btnsp">&lt;</button> : ""}
                     {11 < filterpokemon().length ? <button onClick={nextPage} className="btnsp">&gt;</button> : ""}
                 </div>
             </div>
+            
 
             
         

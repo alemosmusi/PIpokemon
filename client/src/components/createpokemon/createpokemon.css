@@ -1,0 +1,150 @@
+.danger{
+    color: rgb(168, 0, 0)
+}
+.todo{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.bodyy{
+    color: rgb(0, 0, 0);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.gratistodo.com/wp-content/uploads/2016/07/pokemon-wallpapers-22.jpg");
+    padding: 10px;
+}
+.contain{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.679), rgb(255, 0, 0));
+
+}
+
+.contain .heading{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.contain .heading::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(3, 3, 3), rgb(251, 251, 251));
+}
+
+.contain form .card-details{
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .card-details .card-box{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+}
+
+.card-details .card-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.card-details .card-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.card-details .card-box select{
+    height: 45px;
+    width: 105%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.card-details .card-box input:focus,
+.card-details .card-box input:valid{
+    border-color: rgb(0, 0, 0);
+}
+
+
+.bottype{
+    margin-top: 5px;
+    min-width: 80px;
+    min-height: 30px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 0, 0));
+    cursor: pointer;
+}
+
+form .bbto{
+    text-align: center;
+}
+form .bbto input{
+    
+    padding: 10px 0;
+    margin-top: 10px;
+    height: 100%;
+    width: 50%;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, rgb(255, 0, 0), rgb(253, 252, 252));
+}
+
+
+form .bbto input:hover{
+    cursor: pointer;
+    background: linear-gradient(-45deg, rgb(255, 0, 0), rgb(253, 252, 252));
+}
+
+
+
+.botoncreado{
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, rgb(255, 0, 0), rgb(253, 252, 252));
+}
+
+
+.botoncreado:hover{
+    cursor: pointer;
+    background: linear-gradient(-45deg, rgb(255, 0, 0), rgb(253, 252, 252));
+}

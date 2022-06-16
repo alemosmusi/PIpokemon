@@ -132,10 +132,10 @@ router.get('/:id', async(req, res) =>{
             if(pokemon) return res.json(pokemon)
         }
        
-        return res.status(404).json('EL ID INGRESADO NO COINCIDE CON NINGUN POKEMON')
+        return res.send('EL ID INGRESADO NO COINCIDE CON NINGUN POKEMON')
     }
     }catch(e){
-         return res.status(400).json('ups algo ha sucedido mal');
+         return res.send('ups algo ha sucedido mal');
     }
 })
 

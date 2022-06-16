@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createPoke, obtenerTypes } from '../../redux/actions/pokemonAction';
-
+import "./createpokemon.css"
 
 
 
@@ -23,7 +23,7 @@ export  function  CreatePokemon() {
 
     const allTypes = useSelector((state) => state.arrayTypes)
     const [typesSelect, settypesSelect] = useState([])
-    const pokeCreated = useSelector((state) => state.pokeCreated)
+    const pokeCreated = useSelector((state) => state.pokeCreado)
 
 
   
@@ -128,84 +128,126 @@ useEffect(() => {
   }
 
 
-
   return (
-    
-    <div className="content">
+    <div className='todo'>
+      <div className='bodyy'>
+      <div className="contain">
 
-      <h1 className="cree">CREE SU POKEMON</h1>
+<div className="heading">CREE SU POKEMON</div>
 
-      <div className="contact-form">
-
-
-
-<form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
-        <input className={errors.name && 'danger'} type="text" name="name" placeholder='Name' onChange={handleInputChange} value={input.name} autoComplete="off"/>
-        {errors.name && (
-        <p className="danger">{errors.name}</p>
-      )}
-      <label>Vida:</label>
-        <input className={errors.vida && 'danger'} type="text" name="vida" placeholder='Vida' onChange={handleInputChange} value={input.vida} autoComplete="off"/>
-        {errors.vida && (
-        <p className="danger">{errors.vida}</p>
-      )}
-      <label>Fuerza:</label>
-        <input className={errors.fuerza && 'danger'} type="text" name="fuerza" placeholder='Fuerza' onChange={handleInputChange} value={input.fuerza} autoComplete="off"/>
-        {errors.fuerza && (
-        <p className="danger">{errors.fuerza}</p>
-      )}
-      <label>Defensa:</label>
-        <input className={errors.defensa && 'danger'} type="text" name="defensa" placeholder='Defensa' onChange={handleInputChange} value={input.defensa} autoComplete="off"/>
+  <form onSubmit={handleSubmit}>
+    <div className='card-details'>
+      <div className='card-box'>
+        <span className='details'>Name:</span>
+        <input className="text" type="text" name="name" placeholder='Name' onChange={handleInputChange} value={input.name} autoComplete="off"/>
+          {errors.name && (
+          <p className="danger">{errors.name}</p>
+        )}
+      </div>
+      <div className='card-box'>
+        <span className='details'>Vida:</span>
+        <input className="text" type="text" name="vida" placeholder='Vida' onChange={handleInputChange} value={input.vida} autoComplete="off"/>
+          {errors.vida && (
+          <p className="danger">{errors.vida}</p>
+        )}
+      </div>
+      <div className='card-box'>
+        <span className='details'>Fuerza:</span>
+        <input className="text" type="text" name="fuerza" placeholder='Fuerza' onChange={handleInputChange} value={input.fuerza} autoComplete="off"/>
+          {errors.fuerza && (
+          <p className="danger">{errors.fuerza}</p>
+        )}
+      </div>
+      <div className='card-box'>
+        <span className='details'>Defensa:</span>
+        <input className="text" type="text" name="defensa" placeholder='Defensa' onChange={handleInputChange} value={input.defensa} autoComplete="off"/>
         {errors.defensa && (
         <p className="danger">{errors.defensa}</p>
       )}
-      <label>Velocidad:</label>
-        <input className={errors.velocidad && 'danger'} type="text" name="velocidad" placeholder='Velocidad' onChange={handleInputChange} value={input.velocidad} autoComplete="off"/>
-        {errors.velocidad && (
-        <p className="danger">{errors.velocidad}</p>
-      )}
-      <label>Altura:</label>
-        <input className={errors.altura && 'danger'} type="text" name="altura" placeholder='Altura' onChange={handleInputChange} value={input.altura} autoComplete="off"/>
+      </div>
+      <div className='card-box'>
+        <span className='details'>Velocidad:</span>
+        <input className="text" type="text" name="velocidad" placeholder='Velocidad' onChange={handleInputChange} value={input.velocidad} autoComplete="off"/>
+          {errors.velocidad && (
+          <p className="danger">{errors.velocidad}</p>
+        )}
+      </div>
+      <div className='card-box'>
+        <span className='details'>Peso:</span>
+        <input className="text" type="text" name="peso" placeholder='Peso' onChange={handleInputChange} value={input.peso} autoComplete="off"/>
+          {errors.peso && (
+          <p className="danger">{errors.peso}</p>
+        )}
+      </div>
+      <div className='card-box'>
+        <span className='details'>Altura:</span>
+        <input className="text" type="text" name="altura" placeholder='Altura' onChange={handleInputChange} value={input.altura} autoComplete="off"/>
         {errors.altura && (
         <p className="danger">{errors.altura}</p>
       )}
-      <label>Peso:</label>
-        <input className={errors.peso && 'danger'} type="text" name="peso" placeholder='Peso' onChange={handleInputChange} value={input.peso} autoComplete="off"/>
-        {errors.peso && (
-        <p className="danger">{errors.peso}</p>
-      )}
-      <label>Imagen:</label>
-        <input className={errors.img && 'danger'} type="text" name="img" placeholder='Image' onChange={handleInputChange} value={input.img} />
+      </div>
+      <div className='card-box'>
+        <span className='details'>Imagen:</span>
+        <input className="text" type="text" name="img" placeholder='Image' onChange={handleInputChange} value={input.img} />
         {errors.img && (
         <p className="danger">{errors.img}</p>
       )}
-      <select name="selectipos" id="selectipos" onChange={handleTypes}>
-                {allTypes.length>0? allTypes.map(c => <option key={c.name} value={c.name} >{c.name}</option> ):""}
-            </select>
-            {typesSelect.length>0? typesSelect.map(c => <button key={c} onClick={clickType}value={c}>{c}</button> ):""}
-            {errors.types && (
-        <p className="danger">{errors.types}</p>
-      )}
       </div>
-
-      
-      {Object.values(errors)<1?<input  type="submit" name ="submit"  className="bbto"/>:""}
-  </form>
-</div>
-
-{pokeCreated.id?<Link to={`/home/pokemondetail/${pokeCreated.id}`} onClick={alnuevo}>
-            <button className="botoncreado">se creo el pokemon {pokeCreated.name} anda a verlo</button>
-    </Link>:""}
-
-
-
-
-
-
-
+      <div className='card-box'>
+        <span className='details'>Tipos:</span>
+          <select className="text" name="selectipos" id="selectipos" onChange={handleTypes}>
+                    {allTypes.length>0? allTypes.map(c => <option key={c.name} value={c.name} >{c.name}</option> ):""}
+                </select>
+                <div className='category'>
+                {typesSelect.length>0? typesSelect.map(c => <button className="bottype"  key={c} onClick={clickType}value={c}>{c}</button> ):""}
+                </div>
+                
+                {errors.types && (
+            <p className="danger">{errors.types}</p>
+          )}
+      </div>
     </div>
+      {/* <div className='circal-form'>
+        <span className='circal-title'>Tipos:</span>
+          <select className="details" name="selectipos" id="selectipos" onChange={handleTypes}>
+                    {allTypes.length>0? allTypes.map(c => <option key={c.name} value={c.name} >{c.name}</option> ):""}
+                </select>
+                <div className='category'>
+                {typesSelect.length>0? typesSelect.map(c => <button  key={c} onClick={clickType}value={c}>{c}</button> ):""}
+                </div>
+                
+                {errors.types && (
+            <p className="danger">{errors.types}</p>
+          )}
+      </div> */}
+
+        
+        <div className="bbto">
+        {pokeCreated.id?<Link to={`/home/pokemondetail/${pokeCreated.id}`} onClick={alnuevo}>
+      <button className="botoncreado">se creo el pokemon {pokeCreated.name} anda a verlo</button>
+</Link>:Object.values(errors)<1?<input  type="submit" name ="submit"  />:""}
+        
+        </div>
+        
+    </form>
+
+{/* {pokeCreated.id?<Link to={`/home/pokemondetail/${pokeCreated.id}`} onClick={alnuevo}>
+      <button className="botoncreado">se creo el pokemon {pokeCreated.name} anda a verlo</button>
+</Link>:""} */}
+{/* {1?<Link to={`/home/pokemondetail/${pokeCreated.id}`} onClick={alnuevo}>
+      <button className="botoncreado">se creo el pokemon {pokeCreated.name} anda a verlo</button>
+</Link>:""} */}
+
+
+
+
+
+
+
+</div>
+      </div>
+    </div>
+    
     
   )
 

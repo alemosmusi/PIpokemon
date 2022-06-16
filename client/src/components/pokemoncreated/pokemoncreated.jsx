@@ -45,7 +45,7 @@ export default function Pokemoncreados(){
         if(checkb.length === 0 ){return filtered = []}
         if(checkb.length > 0){filtered = filtroChec(filtered,checkb)}
         if(typesSelect.length > 0){ filtered = filtrarG(filtered,typesSelect)}
-
+        
         return filtered.slice(pagina, pagina + 12)
         
        
@@ -136,24 +136,15 @@ export default function Pokemoncreados(){
 				src={fondo}
 				alt='fondo'></img>
             <div id="sidebar">
-            <li>ORDENAR</li>
+            <h3>------ ORDENAR ------</h3>
                     <button className="btns" onClick={ordenarAZ}>{AZ}</button>
                     <button className="btns" onClick={ordenarFUERZA}>{FUERZA}</button>
-            <li>FILTRAR</li>
+                    <h3>------- FILTRAR -------</h3>
                 <select name="selectipos" id="selectipos" onChange={handleInputChange}>
                     {allTypes.length>0? allTypes.map(c => <option key={c.name} value={c.name} >{c.name}</option> ):""}
                 </select>
-                {typesSelect.length>0? typesSelect.map(c => <button key={c} onClick={clickType}value={c}>{c}</button> ):""}
-            <li>
-                API Pokemons
-                <input type="checkbox" value="apip" onChange={checkbox} defaultChecked></input>
-            </li>
-            <li>
-                MIS Pokemons
-                <input type="checkbox" value="misp" onChange={checkbox} defaultChecked></input>
-            </li>
-            <input type="text" onChange={busqueda} />
-            <Link to={`/home/pokemon/${buscar}`}>BUSCAR</Link>
+                {typesSelect.length>0? typesSelect.map(c => <div><button key={c} onClick={clickType}value={c} className="botontype">{c}</button><img src={`../${c}.png`} className="filtrotype"></img></div> ):""}
+            
         
             </div>
             
@@ -163,6 +154,7 @@ export default function Pokemoncreados(){
                     allPokemons && allPokemons.length>1 ? <Pokemons pokes={filterpokemon()}></Pokemons>:""
                     }
                 </div>
+                {allPokemons && allPokemons.length>1 && filterpokemon().length === 0? <img className="sinfiltro" src="https://giffiles.alphacoders.com/140/14071.gif" alt=""></img>:""}
                 <div>
                     {pagina >= 12 ? <button onClick={prevPage} className="btnsp">&lt;</button> : ""}
                     {11 < filterpokemon().length ? <button onClick={nextPage} className="btnsp">&gt;</button> : ""}

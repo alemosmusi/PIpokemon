@@ -12,6 +12,7 @@ const initialState = {
     pokeDetail: [],
     pokeDetailn: {},
     pokeCreated: [],
+    pokeCreado: [],
     eli: [],
 
 }
@@ -42,12 +43,14 @@ const pokemonReducer = (state = initialState, action) => {
                 if(action.payload === "A-Z"){
                     return{
                         ...state,
-                        arrayPokemons : state.arrayPokemons.sort(SortAZ)
+                        arrayPokemons : state.arrayPokemons.sort(SortAZ),
+                        pokeCreated : state.pokeCreated.sort(SortAZ)
                     }
                 }else{
                     return{
                         ...state,
-                        arrayPokemons : state.arrayPokemons.sort(SortZA)
+                        arrayPokemons : state.arrayPokemons.sort(SortZA),
+                        pokeCreated : state.pokeCreated.sort(SortZA)
                     }
                 }
         case ORDENAR_FUERZA:
@@ -56,12 +59,14 @@ const pokemonReducer = (state = initialState, action) => {
             if(action.payload === "FUERZA-↧"){
                 return{
                     ...state,
-                    arrayPokemons : state.arrayPokemons.sort(SortFUERZA)
+                    arrayPokemons : state.arrayPokemons.sort(SortFUERZA),
+                    pokeCreated : state.pokeCreated.sort(SortFUERZA)
                 }
             }else{
                 return{
                     ...state,
-                    arrayPokemons : state.arrayPokemons.sort(SortFUERZAB)
+                    arrayPokemons : state.arrayPokemons.sort(SortFUERZAB),
+                    pokeCreated : state.pokeCreated.sort(SortFUERZAB)
                 }
             }
             
@@ -80,7 +85,7 @@ const pokemonReducer = (state = initialState, action) => {
         case CREATE_POKEMON:
             return{
                 ...state,
-                pokeCreated: action.payload
+                pokeCreado: action.payload
                 
 
             }
