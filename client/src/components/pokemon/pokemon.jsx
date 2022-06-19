@@ -2,13 +2,13 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './pokemon.css';
 import pokedex from '../../assets/img/pokedex.png';
-import { eliminarPoke } from '../../redux/actions/pokemonAction';
-import { useDispatch } from 'react-redux';
+
 
 
 export default function Pokemon ({id, name, altura, defensa, fuerza, img, peso, type, velocidad, vida}) {
     let {pathname} = useLocation();
-    const dispatch = useDispatch()
+    
+
 
 
     var X = ""
@@ -17,7 +17,7 @@ export default function Pokemon ({id, name, altura, defensa, fuerza, img, peso, 
     }
 
     const eliminar = function(){
-        dispatch(eliminarPoke(id))     
+        console.log(id)
     
       }
 
