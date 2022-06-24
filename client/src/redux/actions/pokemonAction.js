@@ -129,3 +129,12 @@ export function createPoke(poke){
            
 
 }
+
+export function dejardeMostrar(){
+    return {
+        
+                type: "DEJARDEMOSTRAR"
+                
+    }
+    
+}

@@ -100,6 +100,11 @@ const pokemonReducer = (state = initialState, action) => {
                     
                 }
             }
+        case "DEJARDEMOSTRAR":
+            return{
+                ...state,
+                pokeDetail: []
+            }
             
         
             

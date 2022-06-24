@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { obtenerDetalle } from '../../redux/actions/pokemonAction';
+import { dejardeMostrar, obtenerDetalle } from '../../redux/actions/pokemonAction';
 import './pokemondetail.css';
 import fondo from '../../assets/img/banner.png'
 import pokedex from '../../assets/img/pokedexdetail.png'
@@ -14,7 +14,11 @@ export default function PokemonsDetail() {
     const dispatch = useDispatch()
     const pokeDetail = useSelector((state) => state.pokeDetail)
     useEffect(() => {
+        
         dispatch(obtenerDetalle(params.id))
+        return () => {
+          dispatch(dejardeMostrar())
+        }
         
       
       }, [])
