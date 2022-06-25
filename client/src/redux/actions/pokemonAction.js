@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { CREATE_POKEMON, OBTENER_DETALLE, OBTENER_DETALLEN, OBTENER_POKEMONS, OBTENER_POKEMONS_CREATED, OBTENER_TYPES, ORDENAR_AZ, ORDENAR_FUERZA } from "../action-types/actionTypes";
+import { CREATE_POKEMON, ELIMINAR_UN_POKEMON, OBTENER_DETALLE, OBTENER_DETALLEN, OBTENER_POKEMONS, OBTENER_POKEMONS_CREATED, OBTENER_TYPES, ORDENAR_AZ, ORDENAR_FUERZA } from "../action-types/actionTypes";
 import axios from 'axios';
 
 
@@ -137,4 +137,18 @@ export function dejardeMostrar(){
                 
     }
     
+}
+
+export function eliminarPoke(id){
+    return function(dispatch){
+        
+        return axios.delete(`http://localhost:3001/deletePoke?id=${id}`)
+        .then((response) => {
+            dispatch({
+                type: ELIMINAR_UN_POKEMON,
+                payload: response.data
+            })
+        })
+    }
+
 }

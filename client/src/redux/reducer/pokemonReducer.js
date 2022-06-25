@@ -3,6 +3,8 @@ import { CREATE_POKEMON, ELIMINAR_UN_POKEMON, OBTENER_DETALLE, OBTENER_DETALLEN,
 
 
 
+var ab = 1
+
 
 const initialState = {
     arrayPokemons: [],
@@ -11,6 +13,7 @@ const initialState = {
     pokeDetailn: {},
     pokeCreated: [],
     pokeCreado: [],
+    eli: [],
 
 }
 
@@ -105,6 +108,15 @@ const pokemonReducer = (state = initialState, action) => {
                 ...state,
                 pokeDetail: []
             }
+
+            case ELIMINAR_UN_POKEMON:
+            
+                return {
+                    ...state,
+                    eli: ab++
+                
+                }
+    
             
         
             

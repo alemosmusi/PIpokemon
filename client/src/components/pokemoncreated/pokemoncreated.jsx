@@ -18,6 +18,7 @@ export default function Pokemoncreados(){
     const [FUERZA, setFUERZA] = useState("FUERZA-↧")
     const allTypes = useSelector((state) => state.arrayTypes)
     const [typesSelect, settypesSelect] = useState([])
+    const eli = useSelector((state) => state.eli)
 
 
 
@@ -26,7 +27,7 @@ export default function Pokemoncreados(){
         dispatch(obtenerTypes())
         dispatch(obtenerPokemons())
         dispatch(obtenerPokemonsCreated())
-    }, [])
+    }, [eli])
     useEffect(() => {
         filterpokemon()
     }, [allPokemons,allTypes])
