@@ -13,7 +13,7 @@ const { Pokemon , Tipo } = require('../db.js')
 
 
 
-
+//a
 
 
 
